@@ -19,18 +19,18 @@ const fi = (function () {
             return newCollection
         },
 
-        reduce: function (collection, callback, a) {
+        reduce: function (collection, callback, acc) {
             let i;
-            if (!a) {
-                a = collection[0]
+            if (!acc) {
+                acc = collection[0]
                 i = 1;
             } else {
                 i = 0;
             }
             for (i; i < collection.length; i++) {
-                a= callback(acc, collection[i], collection)
+                acc= callback(acc, collection[i], collection)
             }
-            return a
+            return acc
         },
 
         find: function (collection, predicate) {
